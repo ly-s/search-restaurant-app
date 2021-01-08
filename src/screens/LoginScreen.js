@@ -2,6 +2,7 @@ import React from 'react';
 import { TextInput, Text, View, SafeAreaView, Button } from 'react-native';
 import styles from '../../src/Styles';
 
+
 const LoginScreen = () => {
     return(
         <SafeAreaView style = {styles.container}>

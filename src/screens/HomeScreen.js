@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../Styles';
-import { FlatList, SafeAreaView, Text, View, Button } from 'react-native';
+import { FlatList, SafeAreaView, Text, View, TouchableOpacity, Button } from 'react-native';
 import APIManager from '../APIManager';
 
 
@@ -19,10 +19,12 @@ const HomeScreen = props =>{
                 data = {result}
                 keyExtractor = {item => item.id}
                 renderItem = {({ item }) => (
-                    <View style = {styles.curvedBox}>
-                           <Text style = {styles.title}>{item.title}</Text>
-                            <Text>{item.body}</Text>
-                    </View>
+                    <TouchableOpacity onPress = {()=> props.navigation.navigate("Details")}>
+                        <View style = {styles.curvedBox}>
+                            <Text style = {styles.title}>{item.title}</Text>
+                                <Text>{item.body}</Text>
+                        </View>
+                    </TouchableOpacity>
                 )}
             />
         </SafeAreaView>

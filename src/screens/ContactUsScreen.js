@@ -18,7 +18,7 @@ const ContactUsScreen = props =>{
             number = 'telprompt:${091123456789}';
         }
         else {
-            number = 'tel:{091123456789}';
+            number = 'tel:${091123456789}';
         }
         Linking.canOpenURL(number)
 		.then((supported) => {

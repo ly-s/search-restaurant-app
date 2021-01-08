@@ -12,6 +12,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 5,
         alignSelf: 'center',
+        textAlign: 'center',
+        marginBottom: 10,
     },
     curvedBox: {
         borderWidth: 2,
