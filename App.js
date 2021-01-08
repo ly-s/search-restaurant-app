@@ -9,6 +9,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import AboutScreen from './src/screens/AboutScreen';
 import ContactUsScreen from './src/screens/ContactUsScreen';
 import LocationsScreen from './src/screens/LocationsScreen';
+import LoginScreen from './src/screens/LoginScreen';
 
 
 const Drawer = createDrawerNavigator();
@@ -19,7 +20,8 @@ function App() {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName={HomeScreen}>
         <Drawer.Screen name="Home" component = {HomeScreen}/>
-        <Drawer.Screen name="About" component = {AboutScreen} options = {{ title: 'About', headerStyle:{ backgroundColor: '#f4511e'}}}/>
+        <Drawer.Screen name="Login" component ={LoginScreen}/>
+        <Drawer.Screen name="About" component = {AboutScreen}/>
         <Drawer.Screen name="Contact Us" component = {ContactUsScreen}/>
         <Drawer.Screen name="Locations" component = {LocationsScreen}/>
       </Drawer.Navigator>
