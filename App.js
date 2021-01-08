@@ -19,7 +19,7 @@ function App() {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName={HomeScreen}>
         <Drawer.Screen name="Home" component = {HomeScreen}/>
-        <Drawer.Screen name="About" component = {AboutScreen}/>
+        <Drawer.Screen name="About" component = {AboutScreen} options = {{ title: 'About', headerStyle:{ backgroundColor: '#f4511e'}}}/>
         <Drawer.Screen name="Contact Us" component = {ContactUsScreen}/>
         <Drawer.Screen name="Locations" component = {LocationsScreen}/>
       </Drawer.Navigator>
