@@ -1,11 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import styles from '../../src/Styles';
 
-const DetailsScreen = props => {
+const DetailsScreen = ({ route, navigation }) => {
+    //const { title, body } = route.params;
+    const { title, first, last, country, email, thumbnail } = route.params;
     return(
         <View style = {styles.container}>
-            <Text style = {styles.header}>Welcome to the Details Screen</Text>
+            <View style = {styles.listItem}>
+                <Image
+                    source = {{uri: thumbnail}}
+                    style = {styles.coverImage}
+                />
+                <View>
+                    <Text style = {styles.title}>{title} {first} {last}</Text>
+                    <Text style = {styles.boxText}>from {country}</Text>
+                    <Text style = {styles.boxText}>email: {email}</Text>
+                </View>
+            </View>
         </View>
     );
 }

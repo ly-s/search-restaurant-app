@@ -23,10 +23,7 @@ function App() {
         <Drawer.Screen name = "About" component = {AboutScreen}/>
         <Drawer.Screen name = "Contact Us" component = {ContactUsScreen}/>
         <Drawer.Screen name = "Locations" component = {LocationsScreen}/>
-        <Drawer.Screen name = "Details" component = {DetailsScreen}
-          options = {{
-            drawerLabel: () => null,
-          }}/>
+        <Drawer.Screen name = "Details" component = {DetailsScreen}/>
       </Drawer.Navigator>
     </NavigationContainer>
   );

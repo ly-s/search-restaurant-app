@@ -15,9 +15,11 @@ const LoginScreen = () => {
                 style = {styles.textField}
                 placeholder = 'Password'
             />
-            <Button
-                title = 'Login'
-            />
+            <View style = {styles.boxButton}>
+                <Button
+                    title = 'Login'
+                />
+            </View>
         </SafeAreaView>
     )
 }
