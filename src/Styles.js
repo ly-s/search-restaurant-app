@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         fontWeight: 'bold',
-        marginBottom: 5,
         alignSelf: 'center',
         textAlign: 'center',
         marginBottom: 10,
@@ -81,34 +80,50 @@ const styles = StyleSheet.create({
         marginTop: 60,
         fontWeight: '700'
       },
-      listItem: {
+    listItem: {
         marginTop: 10,
         paddingVertical: 20,
         paddingHorizontal: 20,
         backgroundColor: '#fff',
         flexDirection: 'row'
-      },
-      coverImage: {
+    },
+    coverImage: {
         width: 100,
         height: 100,
         borderRadius: 8
-      },
-      metaInfo: {
+    },
+    metaInfo: {
         marginLeft: 10
-      },
-      title: {
+    },
+    boxText: {
+        fontSize: 15,
+        color: 'gray',
+        marginLeft: 10,
+        marginBottom: 10,
+    },
+    rowList: {
+        marginHorizontal: 10,
+        borderColor: 'transparent',
+        borderBottomColor: 'gray',
+        paddingBottom: 20,
+        borderWidth: 2,
+    },
+    rowListText: {
         fontSize: 20,
-        fontWeight: 'bold',
-        width: 200,
-        padding: 10
-      },
-      boxText: {
-          fontSize: 15,
-          color: 'gray',
-          marginLeft: 10,
-          marginBottom: 10,
-      }
-    
+        color: '#101010',
+        marginHorizontal: 10,
+        marginTop: 20,
+        fontWeight: '700',
+    },
+    textInput: {
+        fontSize: 20,
+        marginHorizontal: 10,
+        borderColor: 'transparent',
+        borderBottomColor: 'gray',
+        paddingBottom: 5,
+        borderWidth: 2,
+    },
+
   });
 
 export default styles;

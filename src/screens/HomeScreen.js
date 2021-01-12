@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Text,
-  View,
-  FlatList,
-  ActivityIndicator,
-  Image,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import { Text, View, FlatList, ActivityIndicator, Image, TextInput, TouchableOpacity, } from 'react-native';
 import styles from '../../src/Styles';
 import filter from 'lodash.filter';
 
@@ -99,7 +91,6 @@ const HomeScreen = props => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Favorite Contacts</Text>
       <FlatList
         ListHeaderComponent={renderHeader}
         data={data}
