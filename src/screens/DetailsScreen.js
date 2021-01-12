@@ -3,7 +3,6 @@ import { View, Text, Image } from 'react-native';
 import styles from '../../src/Styles';
 
 const DetailsScreen = ({ route, navigation }) => {
-    //const { title, body } = route.params;
     const { title, first, last, country, email, thumbnail } = route.params;
     return(
         <View style = {styles.container}>
