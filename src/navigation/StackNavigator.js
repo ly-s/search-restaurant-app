@@ -13,6 +13,8 @@ import UserAgreement from '../screens/Privacy-Agreements/UserAgreement';
 import PrivacyPolicy from '../screens/Privacy-Agreements/PrivacyPolicy';
 import OnlineTracking from '../screens/Privacy-Agreements/OnlineTracking';
 import OpenSourceLicenses from '../screens/Privacy-Agreements/OpenSourceLicenses';
+import { MainTabNavigator } from './TopTabNavigator';
+import SpecificLocationSubmit from '../screens/Feedback/SpecificLocationSubmit';
 
 const Stack = createStackNavigator();
 
@@ -37,6 +39,8 @@ const FeedbackStackNavigator = () => {
             <Stack.Screen name = "Feedback2" component = {FeedBackScreen2}/>
             <Stack.Screen name = "Feedback3" component = {FeedBackScreen3}/>
             <Stack.Screen name = "General Feedback" component = {GeneralFeedbackScreen}/>
+            <Stack.Screen name = "Specific Location" component = {MainTabNavigator}/>
+            <Stack.Screen name = "Specific Location Submit" component = {SpecificLocationSubmit}/>
         </Stack.Navigator>
     );
 }

@@ -5,14 +5,14 @@ import styles from '../../Styles';
 const FeedBackScreen3 = ({ route, navigation }) => {
     const { category, type } = route.params;
     return(
-        <SafeAreaView>
+        <SafeAreaView style = {{marginTop: 10}}>
             <Text style = {styles.title}>Is this about a specific location?</Text>
                 <View>
-                    <TouchableOpacity onPress = {()=> navigation.navigate("General Feedback", {type: type, category: category})}>
+                    <TouchableOpacity onPress = {() => navigation.navigate("General Feedback", {type: type, category: category})}>
                         <Text style = {styles.rowListText}>General Feedback</Text>
                     </TouchableOpacity>
                     <View style = {styles.rowList}/>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress = {() => navigation.navigate("Specific Location", {screen: "List", params: { type: type, category: category }})}>
                         <Text style = {styles.rowListText}>Specific Location</Text>
                     </TouchableOpacity>
                     <View style = {styles.rowList}/>

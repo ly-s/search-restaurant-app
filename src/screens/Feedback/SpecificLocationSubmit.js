@@ -2,12 +2,13 @@ import React from 'react';
 import { Text, View, SafeAreaView, TextInput, Button } from 'react-native';
 import styles from '../../Styles';
 
-const GeneralFeedbackScreen = ({route, navigation}) => {
-    const { category, type } = route.params;
+const SpecificLocationSubmit = ({route, navigation}) => {
+    const { category, type, location} = route.params;
     return(
         <SafeAreaView>
-            <Text style = {{fontSize: 15, marginLeft: 10}}>What     {category}</Text>
-            <Text style = {{fontSize: 15, marginLeft: 10, marginBottom: 20}}>Why      {type}</Text>
+            <Text style = {{fontSize: 15, marginLeft: 10}}>What         {category}</Text>
+            <Text style = {{fontSize: 15, marginLeft: 10}}>Why           {type}</Text>
+            <Text style = {{fontSize: 15, marginLeft: 10, marginBottom: 20}}>Where       {location}</Text>
             <View style = {{marginVertical: 10}}/>
             <TextInput
                 style = {(styles.textInput)}
@@ -32,4 +33,4 @@ const GeneralFeedbackScreen = ({route, navigation}) => {
     );
 }
 
-export default GeneralFeedbackScreen;
+export default SpecificLocationSubmit;

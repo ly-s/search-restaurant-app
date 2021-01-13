@@ -24,7 +24,7 @@ const options = [
 const FeedBackScreen2 = ({ route, navigation }) => {
     const { category } = route.params;
     return(
-        <SafeAreaView>
+        <SafeAreaView style = {{marginTop: 10}}>
             <Text style = {styles.title}>What's on your mind?</Text>
             <FlatList
                 data = {options}
