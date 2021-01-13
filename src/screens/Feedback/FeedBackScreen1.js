@@ -27,6 +27,7 @@ const FeedBackScreen1 = ({navigation}) => {
             <Text style = {styles.title}>What is this regarding?</Text>
             <FlatList
                 data = {options}
+                scrollEnabled = {false}
                 // keyExtractor = {item => item.key}
                 renderItem = {({item}) =>
                     <View>

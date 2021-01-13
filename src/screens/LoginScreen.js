@@ -3,7 +3,7 @@ import { TextInput, Text, View, SafeAreaView, Button } from 'react-native';
 import styles from '../../src/Styles';
 
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
     return(
         <SafeAreaView style = {styles.container}>
             <Text style = {styles.titleHeader}>Login to Search Restaurant</Text>
@@ -18,6 +18,7 @@ const LoginScreen = () => {
             <View style = {styles.boxButton}>
                 <Button
                     title = 'Login'
+                    onPress = {() => navigation.navigate("Home")}
                 />
             </View>
         </SafeAreaView>

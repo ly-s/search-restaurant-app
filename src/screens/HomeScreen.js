@@ -3,7 +3,7 @@ import { Text, View, FlatList, ActivityIndicator, Image, TextInput, TouchableOpa
 import styles from '../../src/Styles';
 import filter from 'lodash.filter';
 
-const API_ENDPOINT = 'https://randomuser.me/api/?seed=1&page=1&results=20';
+const API_ENDPOINT = 'https://randomuser.me/api/?seed=1&page=1&results=100';
 
 const HomeScreen = props => {
   const [isLoading, setIsLoading] = useState(false);
@@ -102,11 +102,11 @@ const HomeScreen = props => {
                 last: item.name.last,
                 country: item.location.country,
                 email: item.email,
-                thumbnail: item.picture.thumbnail,
+                thumbnail: item.picture.large,
             })}>
                 <View style={styles.listItem}>
                     <Image
-                    source={{ uri: item.picture.thumbnail }}
+                    source={{ uri: item.picture.large }}
                     style={styles.coverImage}
                     />
                     <View style={styles.metaInfo}>

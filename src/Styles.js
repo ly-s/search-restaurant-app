@@ -34,24 +34,17 @@ const styles = StyleSheet.create({
     description: {
         fontSize: 15,
         color: 'gray',
-        borderBottomColor: 'gray',
+        width: 300,
     },
     map: {
         width: '100%',
         height: '100%',
     },
     contactComponent: {
-        marginTop: 10,
-        width: '95%',
-        padding: 20,
+        padding: 10,
         flexDirection: 'row',
         fontSize: 24,
         fontWeight: 'bold',
-        borderBottomColor: 'gray',
-        borderLeftColor: 'transparent',
-        borderRightColor: 'transparent',
-        borderTopColor: 'transparent',
-        borderWidth: 2,
         fontSize: 24,
     },
     icon: {

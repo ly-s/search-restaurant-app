@@ -30,27 +30,49 @@ const ContactUsScreen = props =>{
     }
 
     return(
-        <SafeAreaView style = {styles.container}>
-            <FlatList
-                style = {{flex: 1}}
-                data = {contact}
-                renderItem = {({item}) => (
-                    <View style = {styles.contactComponent}>
-                        <TouchableOpacity onPress = {() => openDialScreen()}>
-                            <Image
-                                style = {styles.icon}
-                                source = {item.icon}
-                                
-                            />
-                        </TouchableOpacity>
+        <SafeAreaView style = {{margin: 10}}>
+            <View style = {styles.contactComponent}>
+                <TouchableOpacity>
+                    <Image
+                        style = {styles.icon}
+                        source = {require('../../assets/email.png')}
+                    />
+                </TouchableOpacity>
+                <View>
+                    <Text style = {styles.header}>Email</Text>
+                    <Text style = {styles.description}>Info@gmail.com</Text>
+                </View>
+            </View>
 
-                        <View>
-                            <Text style = {styles.header}>{item.title}</Text>
-                            <Text style = {styles.description}>{item.description}</Text>
-                        </View>
-                    </View>
-                )}
-            />
+            <View style = {styles.rowList}/>
+            
+            <View style = {styles.contactComponent}>
+                <TouchableOpacity onPress = {() => openDialScreen()}>
+                    <Image
+                        style = {styles.icon}
+                        source = {require('../../assets/phone.png')}
+                    />
+                </TouchableOpacity>
+                <View>
+                    <Text style = {styles.header}>Phone</Text>
+                    <Text style = {styles.description}>(123) 654 467 376</Text>
+                </View>
+            </View>
+
+            <View style = {styles.rowList}/>
+
+            <View style = {styles.contactComponent}>
+                <TouchableOpacity>
+                    <Image
+                        style = {styles.icon}
+                        source = {require('../../assets/message.png')}
+                    />
+                </TouchableOpacity>
+                <View>
+                    <Text style = {styles.header}>Message</Text>
+                    <Text style = {styles.description}>Is there any way to be awarded much for the Project?</Text>
+                </View>
+            </View>
         </SafeAreaView>
     );
 }

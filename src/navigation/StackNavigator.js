@@ -8,6 +8,11 @@ import FeedBackScreen1 from '../screens/Feedback/FeedBackScreen1';
 import FeedBackScreen2 from '../screens/Feedback/FeedBackScreen2';
 import FeedBackScreen3 from '../screens/Feedback/FeedBackScreen3';
 import GeneralFeedbackScreen from '../screens/Feedback/GeneralFeedbackScreen';
+import PrivacyMain from '../screens/Privacy-Agreements/PrivacyMain';
+import UserAgreement from '../screens/Privacy-Agreements/UserAgreement';
+import PrivacyPolicy from '../screens/Privacy-Agreements/PrivacyPolicy';
+import OnlineTracking from '../screens/Privacy-Agreements/OnlineTracking';
+import OpenSourceLicenses from '../screens/Privacy-Agreements/OpenSourceLicenses';
 
 const Stack = createStackNavigator();
 
@@ -36,4 +41,16 @@ const FeedbackStackNavigator = () => {
     );
 }
 
-export { MainStackNavigator, FeedbackStackNavigator };
+const PrivacyStackNavigator = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name = "Privacy & Agreements" component = {PrivacyMain}/>
+            <Stack.Screen name = "User Agreement" component = {UserAgreement}/>
+            <Stack.Screen name = "Privacy Policy" component = {PrivacyPolicy}/>
+            <Stack.Screen name = "Online Tracking" component = {OnlineTracking} options = {{headerTitle: 'Online Tracking Opt Out Guide'}}/>
+            <Stack.Screen name = "Open Source Licenses" component = {OpenSourceLicenses}/>
+        </Stack.Navigator>
+    )
+}
+
+export { MainStackNavigator, FeedbackStackNavigator, PrivacyStackNavigator };
