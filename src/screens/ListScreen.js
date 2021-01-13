@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, FlatList, ActivityIndicator, Image, TextInput, TouchableOpacity, } from 'react-native';
-import styles from '../../src/Styles';
+import styles from '../Styles';
 import filter from 'lodash.filter';
 
 const API_ENDPOINT = 'https://randomuser.me/api/?seed=1&page=1&results=100';
 
-const HomeScreen = props => {
+const ListScreen = props => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
@@ -120,4 +120,4 @@ const HomeScreen = props => {
   );
 }
 
-export default HomeScreen;
+export default ListScreen;

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import HomeScreen from '../screens/HomeScreen';
 import DetailsScreen from '../screens/DetailsScreen';
 import FeedBackScreen1 from '../screens/Feedback/FeedBackScreen1';
 import FeedBackScreen2 from '../screens/Feedback/FeedBackScreen2';
@@ -15,17 +14,11 @@ import OnlineTracking from '../screens/Privacy-Agreements/OnlineTracking';
 import OpenSourceLicenses from '../screens/Privacy-Agreements/OpenSourceLicenses';
 import { MainTabNavigator } from './TopTabNavigator';
 import SpecificLocationSubmit from '../screens/Feedback/SpecificLocationSubmit';
+import OrderMain from '../screens/Order/OrderMain';
+import OrderType from '../screens/Order/OrderType';
+import ListScreen from '../screens/ListScreen';
 
 const Stack = createStackNavigator();
-
-const MainStackNavigator = () => {
-    return(
-        <Stack.Navigator>
-            <Stack.Screen name = "Home" component = {HomeScreen}/>
-            <Stack.Screen name = "Details" component = {DetailsScreen}/>
-        </Stack.Navigator>
-    );
-}
 
 const FeedbackStackNavigator = () => {
     return (
@@ -57,4 +50,15 @@ const PrivacyStackNavigator = () => {
     )
 }
 
-export { MainStackNavigator, FeedbackStackNavigator, PrivacyStackNavigator };
+const OrderStackNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions = {{headerBackTitle: 'Back'}}>
+            <Stack.Screen name = "Order Main" component = {OrderMain} options = {{headerTitle: 'Welcome!'}}/>
+            <Stack.Screen name = "Order Type" component = {OrderType}/>
+            <Stack.Screen name = "Restaurant List" component = {ListScreen}/>
+            <Stack.Screen name = "Details" component = {DetailsScreen}/>
+        </Stack.Navigator>
+    );
+}
+
+export { FeedbackStackNavigator, PrivacyStackNavigator, OrderStackNavigator };

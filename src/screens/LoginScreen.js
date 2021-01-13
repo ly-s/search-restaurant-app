@@ -18,7 +18,7 @@ const LoginScreen = ({navigation}) => {
             <View style = {styles.boxButton}>
                 <Button
                     title = 'Login'
-                    onPress = {() => navigation.navigate("Home")}
+                    onPress = {() => navigation.navigate("Order")}
                 />
             </View>
         </SafeAreaView>

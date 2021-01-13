@@ -116,6 +116,11 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         borderWidth: 2,
     },
+    bottom: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        marginBottom: 10,
+    }
 
   });
 
