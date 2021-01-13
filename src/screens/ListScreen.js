@@ -5,7 +5,9 @@ import filter from 'lodash.filter';
 
 const API_ENDPOINT = 'https://randomuser.me/api/?seed=1&page=1&results=100';
 
-const ListScreen = props => {
+const ListScreen = ({ route, navigation}) => {
+  const { order, when } = route.params;
+
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
@@ -91,12 +93,14 @@ const ListScreen = props => {
 
   return (
     <View style={styles.container}>
+      <Text style = {{fontWeight: 'bold', alignSelf: 'baseline', marginLeft: 10, marginTop: 10}}>Order Type: {order}</Text>
+      <Text style = {{fontWeight: 'bold', alignSelf: 'baseline', marginLeft: 10, marginBottom: 10}}>When: {when}</Text>
       <FlatList
         ListHeaderComponent={renderHeader}
         data={data}
         keyExtractor={item => item.first}
         renderItem={({ item }) => (
-            <TouchableOpacity onPress = {()=> props.navigation.navigate("Details", {
+            <TouchableOpacity onPress = {()=> navigation.navigate("Details", {
                 title: item.name.title,
                 first: item.name.first,
                 last: item.name.last,
