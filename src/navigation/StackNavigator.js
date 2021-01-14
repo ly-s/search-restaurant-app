@@ -17,6 +17,10 @@ import SpecificLocationSubmit from '../screens/Feedback/SpecificLocationSubmit';
 import OrderMain from '../screens/Order/OrderMain';
 import OrderType from '../screens/Order/OrderType';
 import ListScreen from '../screens/ListScreen';
+import OrderList from '../screens/Order/OrderList';
+import OrderMenu from '../screens/Order/OrderMenu';
+import OrderCart from '../screens/Order/OrderCart';
+import OrderItem from '../screens/Order/OrderItem';
 
 const Stack = createStackNavigator();
 
@@ -55,7 +59,10 @@ const OrderStackNavigator = () => {
         <Stack.Navigator screenOptions = {{headerBackTitle: 'Back'}}>
             <Stack.Screen name = "Order Main" component = {OrderMain} options = {{headerTitle: 'Welcome!'}}/>
             <Stack.Screen name = "Order Type" component = {OrderType}/>
-            <Stack.Screen name = "Restaurant List" component = {ListScreen}/>
+            <Stack.Screen name = "Restaurant List" component = {OrderList}/>
+            <Stack.Screen name = "Order Menu" component = {OrderMenu}/>
+            <Stack.Screen name = "Order Item" component = {OrderItem}/>
+            <Stack.Screen name = "Order Cart" component = {OrderCart}/>
             <Stack.Screen name = "Details" component = {DetailsScreen}/>
         </Stack.Navigator>
     );

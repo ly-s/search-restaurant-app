@@ -26,6 +26,7 @@ const SpecificLocationSubmit = ({route, navigation}) => {
                 placeholder = "What's on your mind?"
             />
             <Button
+                onPress = {() => navigation.popToTop()}
                 title = 'Submit'
                 style = {{marginTop: 50}}
             />

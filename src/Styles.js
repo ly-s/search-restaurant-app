@@ -120,7 +120,11 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         marginBottom: 10,
-    }
+    },
+    restList: {
+        margin: 10,
+        marginBottom: 3,
+    },
 
   });
 
