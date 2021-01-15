@@ -1,26 +1,16 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, Button, FlatList } from 'react-native';
-
+import Functions from '../../Functions';
 
 const OrderItem = ({ route, navigation }) => {
     const [count, setCount] = useState(1);
-    
     const { item, price, cart } = route.params;
-
-    const decimRound = (num) => {
-        num = num.toFixed(2);
-        return num;
-    }
-    
-    const pushArray = (cart, foodItem) => {
-        cart.push(foodItem);
-        return cart;
-    }
+    const func = new Functions();
 
     const foodItem =
         {
             item: item,
-            price: decimRound(price*count),
+            price: func.decimRound(price*count),
             count: count,
         }
 
@@ -39,7 +29,7 @@ const OrderItem = ({ route, navigation }) => {
                 title = '-'
             />
             <Button
-                onPress = {() => {pushArray(cart, foodItem); navigation.navigate("Order Menu", {cartNew: cart})}}
+                onPress = {() => {func.pushArray(cart, foodItem); navigation.navigate("Order Menu", {cartNew: cart})}}
                 title = 'Add to Cart'
             />
             

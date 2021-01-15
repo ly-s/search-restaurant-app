@@ -33,12 +33,10 @@ const sampleMenu = [
     },
 ]
 
-const cart = [
-];
+const cart = [];
 
 const OrderMenu = ({ route, navigation }) => {
     const { order, when, name, street, menu, delivery, count, cartNew } = route.params;
-    
     return (
         <SafeAreaView>
             <Text>Restaurant Name: {name}</Text>
@@ -65,7 +63,7 @@ const OrderMenu = ({ route, navigation }) => {
             
             <Button
                 title = 'Cart'
-                onPress = {() => navigation.navigate("Order Cart", {cart: cartNew})}
+                onPress = {() => navigation.navigate("Order Cart", {cart: cartNew, delivery: delivery})}
             />
         </SafeAreaView>
     );
