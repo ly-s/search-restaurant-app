@@ -11,14 +11,13 @@ import LocationsScreen from '../screens/LocationsScreen';
 import LoginScreen from '../screens/LoginScreen';
 
 import { MainStackNavigator, FeedbackStackNavigator, PrivacyStackNavigator, OrderStackNavigator} from './StackNavigator';
-import OrderMain from '../screens/Order/OrderMain';
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => {
     return (
         <NavigationContainer>
-            <Drawer.Navigator initialRouteName = "Login" screenOptions = {{headerShown: true}}
+            <Drawer.Navigator initialRouteName = "Order" screenOptions = {{headerShown: true}}
                 >
                 {/* <Drawer.Screen name = "Home" component = {MainStackNavigator} options = {{headerShown: false}}/> */}
                 <Drawer.Screen name = "Login" component ={LoginScreen} options = {{headerShown: false, gestureEnabled: false}}/>

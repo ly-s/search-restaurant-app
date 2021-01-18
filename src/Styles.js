@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         borderRadius: 20,
         margin: 10,
-        padding: 10,
+        paddingBottom: 10,
+        paddingLeft: 5,
     },
     titleHeader: {
         fontSize: 30,
@@ -57,14 +58,15 @@ const styles = StyleSheet.create({
         padding: 10,
         borderWidth: 2,
         borderColor: 'gray',
+        borderRadius: 10,
         margin: 10,
     },
     boxButton: {
-        borderColor: 'blue',
+        borderColor: '#66ffff',
         borderWidth: 2,
         backgroundColor: '#b3ffff',
-        borderRadius: 50,
-        width: '60%',
+        borderRadius: 10,
+        width: '40%',
         margin: 10,
     },
     text: {
@@ -125,7 +127,32 @@ const styles = StyleSheet.create({
         margin: 10,
         marginBottom: 3,
     },
-
+    boxInput: {
+        marginTop: 5,
+        fontSize: 15,
+        borderColor: 'gray',
+        borderWidth: 1,
+        padding: 7,
+        borderRadius: 5,
+    },
+    header1: {
+        fontSize: 17,
+        fontWeight: 'bold',
+    },
+    header2: {
+        fontSize: 15,
+        fontWeight: 'bold',
+    },
+    header1Subtext: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        color: '#ff0000'
+    },
+    header2SubText: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        color: '#ff0000'
+    }
   });
 
 export default styles;

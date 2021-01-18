@@ -16,11 +16,11 @@ import { MainTabNavigator } from './TopTabNavigator';
 import SpecificLocationSubmit from '../screens/Feedback/SpecificLocationSubmit';
 import OrderMain from '../screens/Order/OrderMain';
 import OrderType from '../screens/Order/OrderType';
-import ListScreen from '../screens/ListScreen';
 import OrderList from '../screens/Order/OrderList';
 import OrderMenu from '../screens/Order/OrderMenu';
 import OrderCart from '../screens/Order/OrderCart';
 import OrderItem from '../screens/Order/OrderItem';
+import OrderCheckout from '../screens/Order/OrderCheckout';
 
 const Stack = createStackNavigator();
 
@@ -63,6 +63,7 @@ const OrderStackNavigator = () => {
             <Stack.Screen name = "Order Menu" component = {OrderMenu}/>
             <Stack.Screen name = "Order Item" component = {OrderItem}/>
             <Stack.Screen name = "Order Cart" component = {OrderCart}/>
+            <Stack.Screen name = "Order Checkout" component = {OrderCheckout}/>
             <Stack.Screen name = "Details" component = {DetailsScreen}/>
         </Stack.Navigator>
     );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Text, View, SafeAreaView, Button, TouchableOpacity } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
@@ -35,15 +35,31 @@ const sampleMenu = [
 
 const cart = [];
 
+
 const OrderMenu = ({ route, navigation }) => {
-    const { order, when, name, street, menu, delivery, count, cartNew } = route.params;
+    const { order, when, delStreet, apt, name, street, menu, delivery, count, cartNew } = route.params;
+    
+    var show = true;
+    
+    const cartEmpty = (cartNew) => {
+        if (cartNew === undefined || cartNew.length == 0)
+            return true;
+        else
+            return false;
+    }
+
+    if (cartEmpty(cartNew)){
+        show = false;
+    }
+    else show = true;
+    
     return (
-        <SafeAreaView>
-            <Text>Restaurant Name: {name}</Text>
-            <Text>Street Address: {street}</Text>
-            <Text>Order Type: {order}</Text>
-            <Text>When: {when}</Text>
-            <Text>Menu Link: {menu}</Text>
+        <SafeAreaView style = {{margin: 10}}>
+            <Text style = {styles.header1Subtext}>Restaurant Name: {name}</Text>
+            <Text style = {styles.header1Subtext}>Street Address: {street}</Text>
+            <Text style = {styles.header1Subtext}>Order Type: {order}</Text>
+            <Text style = {styles.header1Subtext}>When: {when}</Text>
+            {/* <Text style = {{fontWeight: 'bold'}}>Menu Link: {menu}</Text> */}
             <FlatList
                 style = {{margin: 10}}
                 data = {sampleMenu}
@@ -61,10 +77,12 @@ const OrderMenu = ({ route, navigation }) => {
                 )}
             />
             
-            <Button
-                title = 'Cart'
-                onPress = {() => navigation.navigate("Order Cart", {cart: cartNew, delivery: delivery})}
-            />
+            { show ? (
+                <Button
+                    title = 'Cart'
+                    onPress = {() => navigation.navigate("Order Cart", {cart: cartNew, delivery: delivery, delStreet: delStreet, apt: apt})}
+                />
+            ) : null}
         </SafeAreaView>
     );
 }
