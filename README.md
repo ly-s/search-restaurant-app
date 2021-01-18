@@ -11,6 +11,7 @@ https://i.diawi.com/sEtPbU
 
 ### Diawi iOS ipa
 
+Google Drive Link: https://drive.google.com/file/d/133jhr4ItXBchof7gqSbC00pfxi-Kex2q/view?usp=sharing
 
 ### Project Details
 Project Version: v1.0
