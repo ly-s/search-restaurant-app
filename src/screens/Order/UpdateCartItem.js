@@ -2,25 +2,23 @@ import React, { useState } from 'react';
 import { SafeAreaView, View, Text, Button, FlatList, TouchableOpacity } from 'react-native';
 import Functions from '../../Functions';
 
-const OrderItem = ({ route, navigation }) => {
-    const [count, setCount] = useState(1);
-    const { item, price, cart } = route.params;
+const UpdateCartItem = ({ route, navigation }) => {
+    const { cart, index } = route.params;
+
+    const [count, setCount] = useState(cart[index].count);
+    const [price, setPrice] = useState(cart[index].price);
+
     const func = new Functions();
 
-    const foodItem =
-        {
-            item: item,
-            price: func.decimRound(price*count),
-            count: count,
-            basePrice: price,
-        }
+    cart[index].count = count;
+    cart[index].price = count*cart[index].basePrice;
 
     return (
         <SafeAreaView style = {{margin: 10, alignItems: 'center'}}>
             {/* <Text style = {{fontWeight: 'bold', fontSize: 17}}>Order Item Screen</Text> */}
-            <Text style = {{fontWeight: 'bold', fontSize: 17}}>Item name: {foodItem.item}</Text>
-            <Text style = {{fontWeight: 'bold', fontSize: 17}}>Count: {foodItem.count}</Text>
-            <Text style = {{fontWeight: 'bold', fontSize: 17}}>Total price: ${foodItem.price}</Text>
+            <Text style = {{fontWeight: 'bold', fontSize: 17}}>Item name: {cart[index].item}</Text>
+            <Text style = {{fontWeight: 'bold', fontSize: 17}}>Count: {count}</Text>
+            <Text style = {{fontWeight: 'bold', fontSize: 17}}>Total price: ${func.decimRound(cart[index].price)}</Text>
             <View style = {{flexDirection: 'row', margin: 10, borderWidth: 1}}>
                 <View style = {{borderWidth: 1, paddingHorizontal: 5}}>
                     <Button
@@ -30,8 +28,8 @@ const OrderItem = ({ route, navigation }) => {
                 </View>
                 <View style = {{borderWidth: 1}}>
                     <Button
-                        onPress = {() => {func.pushArray(cart, foodItem); navigation.navigate("Order Menu", {cartNew: cart})}}
-                        title = 'Add to Cart'
+                        onPress = {() => {setCount(count); navigation.navigate("Order Cart", {cart: cart})}}
+                        title = 'Update Item'
                     />
 
                 </View>
@@ -47,4 +45,4 @@ const OrderItem = ({ route, navigation }) => {
     );
 }
 
-export default OrderItem;
+export default UpdateCartItem;

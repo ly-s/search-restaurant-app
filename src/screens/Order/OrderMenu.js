@@ -80,7 +80,7 @@ const OrderMenu = ({ route, navigation }) => {
             { show ? (
                 <Button
                     title = 'Cart'
-                    onPress = {() => navigation.navigate("Order Cart", {cart: cartNew, delivery: delivery, delStreet: delStreet, apt: apt, delDate: delDate})}
+                    onPress = {() => navigation.navigate("Order Cart", {cart: cartNew, when: when, delivery: delivery, delStreet: delStreet, apt: apt, delDate: delDate})}
                 />
             ) : null}
         </SafeAreaView>

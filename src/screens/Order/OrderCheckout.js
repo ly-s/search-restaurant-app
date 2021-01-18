@@ -8,17 +8,11 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { ScrollView, SafeAreaView, Text, View, Button, TextInput, Platform, Alert } from 'react-native'; 
 
 const OrderCheckout = ({route, navigation}) => {
-    const { total, delivery, delStreet, apt, delDate } = route.params;
+    const { total, when, delivery, delStreet, apt, delDate } = route.params;
 
     const [payMethod, setPayMethod] = useState("Cash");
     
     const [date, setDate] = useState(new Date());
-
-    const onChange = (event, selectedDate) => {
-        const currentDate = selectedDate || date;
-        setDate(currentDate);
-    };
-
 
     var showCredit = false;
     if (payMethod == "Credit Card"){
@@ -37,6 +31,15 @@ const OrderCheckout = ({route, navigation}) => {
                     </View>
                     
                 ) : null}
+                {
+                    when == "Later" ? (
+                        <View style = {{margin: 2}}>
+                            <Text style = {styles.header1Subtext}>Order Details:</Text>
+                            <Text style = {styles.header2SubText}>Date/Time: {delDate}</Text>
+                        </View>
+                        
+                    ) : null
+                }
                 <Text style = {styles.header1}>Estimated Total: ${total}</Text>
                 <Text style = {{fontSize: 15, margin: 5, fontWeight: 'bold'}}>How would you like to pay?</Text>
                 <DropDownPicker
@@ -83,15 +86,15 @@ const OrderCheckout = ({route, navigation}) => {
 
                         <View style = {{margin: 10}}>
                             <Text style = {styles.header2}>Expiration Date</Text>
-                            <View>
-                                <DateTimePicker
-                                    style = {{margin: 2}}
-                                    testID = "datePicker"
-                                    value = {date}
-                                    mode = {'date'}
-                                    is24Hour = {true}
-                                    display = "default"
-                                    onChange = {onChange}
+                            <View style = {{flexDirection: 'row', margin: 2}}>
+                                <TextInput
+                                    style = {styles.boxInput}
+                                    placeholder = 'MM'
+                                />
+                                <View style = {{margin: 2}}/>
+                                <TextInput
+                                    style = {styles.boxInput}
+                                    placeholder = 'YYYY'
                                 />
                             </View>
                         </View>

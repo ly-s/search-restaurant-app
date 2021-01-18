@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, View, Text, Button, TextInput } from 'react-native';
 
 import DropDownPicker from 'react-native-dropdown-picker';
+import DatePicker from 'react-native-datepicker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import styles from '../../Styles';
 
@@ -34,10 +35,6 @@ const OrderType = ({ navigation }) => {
         const currentDate = selectedDate || date;
         setDate(currentDate);
     };
-
-    
-
-
 
     return (
         <SafeAreaView style = {{flex: 1, margin: 10}}>
@@ -97,28 +94,19 @@ const OrderType = ({ navigation }) => {
             { when == 'Later' ? (
                 <View style = {{margin: 10, flexDirection: 'row'}}>
                     <View style = {{flex: 1}}>
-                        <Text style = {styles.header2SubText}>Date/Time:</Text>
-                        <DateTimePicker
-                            style = {{margin: 2}}
-                            testID = "datePicker"
-                            value = {date}
-                            mode = {mode}
-                            is24Hour = {true}
-                            display = "default"
-                            onChange = {onChange}
+                        <Text style = {styles.header1Subtext}>Date/Time:</Text>
+                        <DatePicker
+                            style = {{width: 200}}
+                            date = {date}
+                            mode = "datetime"
+                            placeholder = "Select Date"
+                            format = "MM/DD/YYYY HH:MM"
+                            minDate = {date}
+                            maxDate = "03-20-2021"
+                            confirmBtnText = "Confirm"
+                            cancelBtnText = "Cancel"
+                            onDateChange = {(date) => {setDate(date)}}
                         />
-                        <View style = {{alignSelf: 'flex-start'}}>
-                            <Button
-                                title = 'Change Date'
-                                onPress = {showDatepicker}
-                            />
-                        </View>
-                        <View style = {{alignSelf: 'flex-start'}}>
-                            <Button
-                                title = 'Change Time'
-                                onPress = {showTimepicker}
-                            />
-                        </View>
                     </View>
                 </View>
             ) : null }

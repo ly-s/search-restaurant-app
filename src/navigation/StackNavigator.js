@@ -21,6 +21,7 @@ import OrderMenu from '../screens/Order/OrderMenu';
 import OrderCart from '../screens/Order/OrderCart';
 import OrderItem from '../screens/Order/OrderItem';
 import OrderCheckout from '../screens/Order/OrderCheckout';
+import UpdateCartItem from '../screens/Order/UpdateCartItem';
 
 const Stack = createStackNavigator();
 
@@ -63,6 +64,7 @@ const OrderStackNavigator = () => {
             <Stack.Screen name = "Order Menu" component = {OrderMenu}/>
             <Stack.Screen name = "Order Item" component = {OrderItem}/>
             <Stack.Screen name = "Order Cart" component = {OrderCart}/>
+            <Stack.Screen name = "Update Item" component = {UpdateCartItem}/>
             <Stack.Screen name = "Order Checkout" component = {OrderCheckout}/>
             <Stack.Screen name = "Details" component = {DetailsScreen}/>
         </Stack.Navigator>
