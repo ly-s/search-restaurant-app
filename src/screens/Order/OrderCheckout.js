@@ -8,7 +8,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { ScrollView, SafeAreaView, Text, View, Button, TextInput, Platform, Alert } from 'react-native'; 
 
 const OrderCheckout = ({route, navigation}) => {
-    const { total, delivery, delStreet, apt } = route.params;
+    const { total, delivery, delStreet, apt, delDate } = route.params;
 
     const [payMethod, setPayMethod] = useState("Cash");
     

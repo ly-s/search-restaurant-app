@@ -36,7 +36,7 @@ const restaurantList = [
 
 
 const OrderList = ({ route, navigation }) => {
-    const { order, when, street, apt} = route.params;
+    const { order, when, street, apt, delDate} = route.params;
     return (
       <SafeAreaView style = {{margin: 10}}>
         <Text style = {styles.header1}>Order Type: {order}</Text>
@@ -47,6 +47,11 @@ const OrderList = ({ route, navigation }) => {
               <Text style = {styles.header2SubText}>Street: {street}, Apt #: {apt}</Text>
           </View>
         ) : null }
+        { when == 'Later' ? (
+          <View style = {{margin: 5}}>
+            <Text style = {styles.header2SubText}>Date/Time: {JSON.stringify(delDate)}</Text>
+          </View>
+        ) : null}
         <View style = {{marginTop: 20}}>
           <View style = {{alignSelf: 'center'}}>
             <Text style = {styles.header1}>Restaurant List</Text>
@@ -57,7 +62,7 @@ const OrderList = ({ route, navigation }) => {
             renderItem = {({item}) => (
               <View style = {styles.curvedBox}>
                 <TouchableOpacity
-                  onPress = {() => navigation.navigate("Order Menu", {order: order, when: when, delStreet: street, apt: apt, name: item.name, street: item.street, delivery: item.delivery, menu: item.menu})}
+                  onPress = {() => navigation.navigate("Order Menu", {order: order, when: when, delStreet: street, apt: apt, name: item.name, street: item.street, delivery: item.delivery, menu: item.menu, delDate: delDate})}
                   style = {styles.restList}
                 >
                   <Text style = {{fontWeight: 'bold', fontSize: 17, marginBottom: 5}}>{item.name}</Text>

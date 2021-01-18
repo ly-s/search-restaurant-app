@@ -37,7 +37,7 @@ const cart = [];
 
 
 const OrderMenu = ({ route, navigation }) => {
-    const { order, when, delStreet, apt, name, street, menu, delivery, count, cartNew } = route.params;
+    const { order, when, delStreet, apt, name, street, menu, delivery, count, cartNew, delDate } = route.params;
     
     var show = true;
     
@@ -80,7 +80,7 @@ const OrderMenu = ({ route, navigation }) => {
             { show ? (
                 <Button
                     title = 'Cart'
-                    onPress = {() => navigation.navigate("Order Cart", {cart: cartNew, delivery: delivery, delStreet: delStreet, apt: apt})}
+                    onPress = {() => navigation.navigate("Order Cart", {cart: cartNew, delivery: delivery, delStreet: delStreet, apt: apt, delDate: delDate})}
                 />
             ) : null}
         </SafeAreaView>

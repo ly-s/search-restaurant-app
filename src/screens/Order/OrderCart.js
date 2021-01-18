@@ -6,7 +6,7 @@ import Functions from '../../Functions';
 import styles from '../../Styles';
 
 const OrderCart = ({ route, navigation }) => {
-    const { cart, delivery, delStreet, apt } = route.params;
+    const { cart, delivery, delStreet, apt, delDate } = route.params;
     
     const func = new Functions();
 
@@ -41,7 +41,7 @@ const OrderCart = ({ route, navigation }) => {
             </View>
             { total > 0 ? (
                 <Button
-                    onPress = {() => navigation.navigate("Order Checkout", {total: total, delivery: delivery, delStreet: delStreet, apt: apt})}
+                    onPress = {() => navigation.navigate("Order Checkout", {total: total, delivery: delivery, delStreet: delStreet, apt: apt, delDate: delDate})}
                     title = 'Checkout'
                 />
             ) : null}

@@ -13,11 +13,30 @@ const OrderType = ({ navigation }) => {
     const [apt, setApt] = useState('Apt. 123');
 
     const [date, setDate] = useState(new Date());
+    const [mode, setMode] = useState('date');
+    const [show, setShow] = useState(false);
+
+    const showMode = (currentMode) => {
+        setShow(true);
+        setMode(currentMode);
+    };
+
+    const showDatepicker = () => {
+        showMode('date');
+    };
+
+    const showTimepicker = () => {
+        showMode('time');
+    };
+
 
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate || date;
         setDate(currentDate);
     };
+
+    
+
 
 
     return (
@@ -78,35 +97,34 @@ const OrderType = ({ navigation }) => {
             { when == 'Later' ? (
                 <View style = {{margin: 10, flexDirection: 'row'}}>
                     <View style = {{flex: 1}}>
-                        <Text style = {styles.header2SubText}>Date:</Text>
+                        <Text style = {styles.header2SubText}>Date/Time:</Text>
                         <DateTimePicker
                             style = {{margin: 2}}
                             testID = "datePicker"
                             value = {date}
-                            mode = {'date'}
+                            mode = {mode}
                             is24Hour = {true}
                             display = "default"
                             onChange = {onChange}
                         />
-                    </View>
-                    <View style = {{flex: 1}}>
-                        <Text style = {styles.header2SubText}>Time:</Text>
-                        <DateTimePicker
-                            style = {{margin: 2}}
-                            testID = "timePicker"
-                            value = {date}
-                            mode = {'time'}
-                            is24Hour = {true}
-                            display = "default"
-                            onChange = {onChange}
-                        />
-                        
+                        <View style = {{alignSelf: 'flex-start'}}>
+                            <Button
+                                title = 'Change Date'
+                                onPress = {showDatepicker}
+                            />
+                        </View>
+                        <View style = {{alignSelf: 'flex-start'}}>
+                            <Button
+                                title = 'Change Time'
+                                onPress = {showTimepicker}
+                            />
+                        </View>
                     </View>
                 </View>
             ) : null }
             <View style = {styles.bottom}>
                 <Button
-                    onPress = {() => navigation.navigate("Restaurant List", {order: order, when: when, street: street, apt: apt})}
+                    onPress = {() => navigation.navigate("Restaurant List", {order: order, when: when, street: street, apt: apt, delDate: date})}
                     title = 'Search for locations'
                 />    
             </View>
