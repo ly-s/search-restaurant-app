@@ -3,6 +3,15 @@ An application that can search for restaurants, makes use of Hooks and States to
 
 Application is developed with Stack and Tab Navigators nested in one main Drawer Navigator, this application is designed to reflect the Five Guy's Application in terms of functionality and design.
 
+### Diawi Android apk
+
+https://i.diawi.com/sEtPbU
+
+[![sEtPbU.png](https://i.postimg.cc/Cx7G4CNV/sEtPbU.png)](https://postimg.cc/3ky08vVL)
+
+### Diawi iOS ipa
+
+
 ### Project Details
 Project Version: v1.0
 
