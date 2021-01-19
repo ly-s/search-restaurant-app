@@ -39,6 +39,11 @@ const OrderCart = ({ route, navigation }) => {
                     </View>
                 )}
             />
+            <Button
+                style = {{alignSelf: 'center'}}
+                title = 'Add More Items'
+                onPress = {() => navigation.pop()}
+            />
             <View style = {{margin: 20}}>
                 <Text>Subtotal: ${subtotal}</Text>
                 <Text>Tax: ${tax}</Text>

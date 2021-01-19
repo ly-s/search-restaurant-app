@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
         width: 300,
     },
     map: {
-        width: '100%',
-        height: '100%',
+        width: '95%',
+        height: '95%',
     },
     contactComponent: {
         padding: 10,
@@ -146,12 +146,12 @@ const styles = StyleSheet.create({
     header1Subtext: {
         fontSize: 17,
         fontWeight: 'bold',
-        color: '#ff0000'
+        
     },
     header2SubText: {
         fontSize: 15,
         fontWeight: 'bold',
-        color: '#ff0000'
+        
     }
   });
 

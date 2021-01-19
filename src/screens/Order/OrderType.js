@@ -4,6 +4,7 @@ import { SafeAreaView, View, Text, Button, TextInput } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import DatePicker from 'react-native-datepicker';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import Picker from '@react-native-picker/picker';
 import styles from '../../Styles';
 
 
@@ -41,7 +42,7 @@ const OrderType = ({ navigation }) => {
             <Text style = {styles.header1}>How do you want to order?</Text>
             <View style = {{marginBottom: 5}}/>
             <Text style = {styles.header2}>Order Type</Text>
-            <View style = {{zIndex: 10, margin: 5}}>
+            <View style = {{zIndex: 10, margin: 5}}>  
                 <DropDownPicker
                     items = {[
                         { label: 'In-Store Pickup', value: 'inStorePickup' },
@@ -52,6 +53,7 @@ const OrderType = ({ navigation }) => {
                     defaultValue = "inStorePickup"
                     containerStyle = {{height: 50}}
                     onChangeItem = { item => setOrder(item.label)}
+                    selectedLabelStyle = {{color: 'black'}}
                 />
             </View>
             <Text style = {styles.header2}>When</Text>
@@ -64,6 +66,7 @@ const OrderType = ({ navigation }) => {
                     defaultValue = 'asap'
                     containerStyle = {{height: 50}}
                     onChangeItem = { item => setWhen(item.label)}
+                    selectedLabelStyle = {{color: 'black'}}
                 />
             </View>
             { order == 'Delivery' ? (

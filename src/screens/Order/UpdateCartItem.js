@@ -19,21 +19,21 @@ const UpdateCartItem = ({ route, navigation }) => {
             <Text style = {{fontWeight: 'bold', fontSize: 17}}>Item name: {cart[index].item}</Text>
             <Text style = {{fontWeight: 'bold', fontSize: 17}}>Count: {count}</Text>
             <Text style = {{fontWeight: 'bold', fontSize: 17}}>Total price: ${func.decimRound(cart[index].price)}</Text>
-            <View style = {{flexDirection: 'row', margin: 10, borderWidth: 1}}>
-                <View style = {{borderWidth: 1, paddingHorizontal: 5}}>
+            <View style = {{flexDirection: 'row', margin: 10}}>
+                <View style = {{paddingHorizontal: 5}}>
                     <Button
                         onPress = {() => setCount(count - 1)}
                         title = '-'
                     />
                 </View>
-                <View style = {{borderWidth: 1}}>
+                <View>
                     <Button
                         onPress = {() => {setCount(count); navigation.navigate("Order Cart", {cart: cart})}}
                         title = 'Update Item'
                     />
 
                 </View>
-                <View style = {{borderWidth: 1, paddingHorizontal: 5}}>
+                <View style = {{paddingHorizontal: 5}}>
                     <Button
                         onPress = {() => setCount(count + 1)}
                         title = '+'
